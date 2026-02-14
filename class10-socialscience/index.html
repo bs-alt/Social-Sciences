@@ -1,20 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Class 10 – Social Science</title>
   <style>
-    body { font-family: Arial; background: #f9f9f9; margin: 40px; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 40px; color: #222; }
     h1 { color: #c62828; }
     h2 { margin-top: 30px; color: #444; }
     ul { list-style-type: square; padding-left: 20px; }
     li { margin: 8px 0; }
     a { color: #c62828; text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    .map-section {
+      margin-top: 40px;
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      max-width: 1100px;
+    }
+
+    .map-section .intro { margin-top: 0; line-height: 1.5; }
+
+    .map-wrapper {
+      position: relative;
+      max-width: 700px;
+      margin-top: 20px;
+    }
+
+    .map-wrapper img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      display: block;
+    }
+
+    .reserve-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #d50000;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 2px rgba(213, 0, 0, 0.2);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .reserve-dot:focus {
+      outline: 2px solid #ff7043;
+      outline-offset: 2px;
+    }
+
+    .tooltip {
+      position: absolute;
+      left: 16px;
+      bottom: 18px;
+      width: 250px;
+      background: rgba(28, 28, 28, 0.95);
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.4;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+      text-align: left;
+    }
+
+    .tooltip strong { display: block; margin-bottom: 4px; color: #ffcc80; }
+
+    .reserve-dot:hover .tooltip,
+    .reserve-dot:focus .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .reserve-list {
+      margin-top: 28px;
+      columns: 2;
+      column-gap: 20px;
+    }
+
+    .reserve-list div {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      background: #fafafa;
+      border-radius: 6px;
+      font-size: 14px;
+      border: 1px solid #f0f0f0;
+    }
+
+    @media (max-width: 760px) {
+      body { margin: 18px; }
+      .map-section { padding: 16px; }
+      .reserve-list { columns: 1; }
+    }
   </style>
 </head>
 <body>
-
   <h1>📕 Class 10 – Social Science</h1>
 
   <h2>📖 History</h2>
@@ -37,6 +127,66 @@
     <li><a href="#">Chapter 7: Lifelines of National Economy</a></li>
   </ul>
 
+  <section class="map-section">
+    <h2>🐅 All Tiger Reserves of India</h2>
+    <p class="intro">Hover (or focus) on any red dot to view three important points about that tiger reserve. The complete official list is shown below the map.</p>
+
+    <div class="map-wrapper">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/India_location_map.svg/640px-India_location_map.svg.png" alt="Map of India showing tiger reserve locations">
+
+      <button class="reserve-dot" style="top:27%; left:34%;" aria-label="Corbett Tiger Reserve">
+        <span class="tooltip"><strong>Corbett Tiger Reserve</strong>1. State: Uttarakhand<br>2. Notified: 1973 (Project Tiger)<br>3. Key fact: Oldest tiger reserve in India.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:31%; left:26%;" aria-label="Ranthambore Tiger Reserve">
+        <span class="tooltip"><strong>Ranthambore Tiger Reserve</strong>1. State: Rajasthan<br>2. Notified: 1973<br>3. Key fact: Famous for fort landscape + tiger sightings.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:35%; left:44%;" aria-label="Kanha Tiger Reserve">
+        <span class="tooltip"><strong>Kanha Tiger Reserve</strong>1. State: Madhya Pradesh<br>2. Notified: 1973<br>3. Key fact: Known for hard-ground barasingha recovery.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:29%; left:67%;" aria-label="Manas Tiger Reserve">
+        <span class="tooltip"><strong>Manas Tiger Reserve</strong>1. State: Assam<br>2. Notified: 1973<br>3. Key fact: UNESCO World Heritage ecosystem.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:43%; left:79%;" aria-label="Sundarbans Tiger Reserve">
+        <span class="tooltip"><strong>Sundarbans Tiger Reserve</strong>1. State: West Bengal<br>2. Notified: 1973<br>3. Key fact: Largest mangrove tiger habitat.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:53%; left:41%;" aria-label="Tadoba-Andhari Tiger Reserve">
+        <span class="tooltip"><strong>Tadoba-Andhari Tiger Reserve</strong>1. State: Maharashtra<br>2. Notified: 1994<br>3. Key fact: High probability of tiger sightings.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:63%; left:35%;" aria-label="Bandipur Tiger Reserve">
+        <span class="tooltip"><strong>Bandipur Tiger Reserve</strong>1. State: Karnataka<br>2. Notified: 1973<br>3. Key fact: Part of Nilgiri Biosphere landscape.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:78%; left:50%;" aria-label="Periyar Tiger Reserve">
+        <span class="tooltip"><strong>Periyar Tiger Reserve</strong>1. State: Kerala<br>2. Notified: 1978<br>3. Key fact: Rich evergreen forests + lake habitat.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:73%; left:42%;" aria-label="Mudumalai Tiger Reserve">
+        <span class="tooltip"><strong>Mudumalai Tiger Reserve</strong>1. State: Tamil Nadu<br>2. Notified: 2007<br>3. Key fact: Key corridor for Nilgiri tigers.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:57%; left:58%;" aria-label="Nagarjunsagar-Srisailam Tiger Reserve">
+        <span class="tooltip"><strong>Nagarjunsagar-Srisailam</strong>1. State: Andhra Pradesh<br>2. Notified: 1982<br>3. Key fact: One of India’s largest tiger reserves.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:48%; left:63%;" aria-label="Similipal Tiger Reserve">
+        <span class="tooltip"><strong>Similipal Tiger Reserve</strong>1. State: Odisha<br>2. Notified: 1973<br>3. Key fact: Large forested highland ecosystem.</span>
+      </button>
+
+      <button class="reserve-dot" style="top:25%; left:78%;" aria-label="Namdapha Tiger Reserve">
+        <span class="tooltip"><strong>Namdapha Tiger Reserve</strong>1. State: Arunachal Pradesh<br>2. Notified: 1983<br>3. Key fact: Exceptional biodiversity in NE India.</span>
+      </button>
+    </div>
+
+    <h2>Complete List (54 Tiger Reserves)</h2>
+    <div class="reserve-list" id="reserveList"></div>
+  </section>
+
   <h2>🏛 Civics</h2>
   <ul>
     <li><a href="#">Chapter 1: Power Sharing</a></li>
@@ -58,5 +208,72 @@
     <li><a href="#">Chapter 5: Consumer Rights</a></li>
   </ul>
 
+  <script>
+    const tigerReserves = [
+      { name: "Corbett", state: "Uttarakhand", year: 1973 },
+      { name: "Ranthambore", state: "Rajasthan", year: 1973 },
+      { name: "Kanha", state: "Madhya Pradesh", year: 1973 },
+      { name: "Manas", state: "Assam", year: 1973 },
+      { name: "Melghat", state: "Maharashtra", year: 1973 },
+      { name: "Palamau", state: "Jharkhand", year: 1973 },
+      { name: "Similipal", state: "Odisha", year: 1973 },
+      { name: "Bandipur", state: "Karnataka", year: 1973 },
+      { name: "Sundarbans", state: "West Bengal", year: 1973 },
+      { name: "Periyar", state: "Kerala", year: 1978 },
+      { name: "Sariska", state: "Rajasthan", year: 1978 },
+      { name: "Buxa", state: "West Bengal", year: 1983 },
+      { name: "Indravati", state: "Chhattisgarh", year: 1983 },
+      { name: "Namdapha", state: "Arunachal Pradesh", year: 1983 },
+      { name: "Dudhwa", state: "Uttar Pradesh", year: 1987 },
+      { name: "Kalakad-Mundanthurai", state: "Tamil Nadu", year: 1988 },
+      { name: "Valmiki", state: "Bihar", year: 1990 },
+      { name: "Pench (MP)", state: "Madhya Pradesh", year: 1992 },
+      { name: "Bandhavgarh", state: "Madhya Pradesh", year: 1993 },
+      { name: "Tadoba-Andhari", state: "Maharashtra", year: 1994 },
+      { name: "Pench (MH)", state: "Maharashtra", year: 1999 },
+      { name: "Nagarhole", state: "Karnataka", year: 1999 },
+      { name: "Satpura", state: "Madhya Pradesh", year: 1999 },
+      { name: "Nagarjunsagar-Srisailam", state: "Andhra Pradesh", year: 1982 },
+      { name: "Anamalai", state: "Tamil Nadu", year: 2007 },
+      { name: "Mudumalai", state: "Tamil Nadu", year: 2007 },
+      { name: "Dandeli-Anshi", state: "Karnataka", year: 2007 },
+      { name: "Kaziranga", state: "Assam", year: 2007 },
+      { name: "Udanti-Sitanadi", state: "Chhattisgarh", year: 2008 },
+      { name: "Satkosia", state: "Odisha", year: 2008 },
+      { name: "Sanjay-Dubri", state: "Madhya Pradesh", year: 2008 },
+      { name: "Achanakmar", state: "Chhattisgarh", year: 2009 },
+      { name: "Parambikulam", state: "Kerala", year: 2010 },
+      { name: "Sahyadri", state: "Maharashtra", year: 2010 },
+      { name: "Biligiri Ranganatha", state: "Karnataka", year: 2011 },
+      { name: "Kawal", state: "Telangana", year: 2012 },
+      { name: "Sathyamangalam", state: "Tamil Nadu", year: 2013 },
+      { name: "Mukundara Hills", state: "Rajasthan", year: 2013 },
+      { name: "Nawegaon-Nagzira", state: "Maharashtra", year: 2013 },
+      { name: "Amrabad", state: "Telangana", year: 2014 },
+      { name: "Bor", state: "Maharashtra", year: 2014 },
+      { name: "Pilibhit", state: "Uttar Pradesh", year: 2014 },
+      { name: "Rajaji", state: "Uttarakhand", year: 2015 },
+      { name: "Orang", state: "Assam", year: 2016 },
+      { name: "Kamlang", state: "Arunachal Pradesh", year: 2016 },
+      { name: "Srivilliputhur-Megamalai", state: "Tamil Nadu", year: 2021 },
+      { name: "Ramgarh Vishdhari", state: "Rajasthan", year: 2022 },
+      { name: "Guru Ghasidas-Tamor Pingla", state: "Chhattisgarh", year: 2021 },
+      { name: "Kanger Valley", state: "Chhattisgarh", year: 2022 },
+      { name: "Veerangana Durgavati", state: "Madhya Pradesh", year: 2023 },
+      { name: "Dholpur-Karauli", state: "Rajasthan", year: 2023 },
+      { name: "Ratapani", state: "Madhya Pradesh", year: 2023 },
+      { name: "Dampa", state: "Mizoram", year: 1994 },
+      { name: "North Kamrup", state: "Assam", year: 2024 }
+    ];
+
+    const reserveList = document.getElementById('reserveList');
+    tigerReserves
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .forEach((reserve) => {
+        const div = document.createElement('div');
+        div.innerHTML = `<strong>${reserve.name} Tiger Reserve</strong> – ${reserve.state} (Notified: ${reserve.year})`;
+        reserveList.appendChild(div);
+      });
+  </script>
 </body>
 </html>
