@@ -11,6 +11,91 @@
     li { margin: 8px 0; }
     a { color: #c62828; text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    .map-section {
+      margin-top: 40px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      max-width: 760px;
+    }
+
+    .map-section p {
+      margin-top: 0;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .map-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      margin-top: 16px;
+    }
+
+    .map-wrapper img {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    .reserve-dot {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: #d50000;
+      box-shadow: 0 0 0 2px rgba(213, 0, 0, 0.2);
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+
+    .reserve-dot::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: rgba(33, 33, 33, 0.95);
+      color: #fff;
+      width: 220px;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.35;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    .tooltip strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      color: #ffcc80;
+    }
+
+    .reserve-dot:hover .tooltip,
+    .reserve-dot:focus .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .reserve-dot:focus {
+      outline: 2px solid #ff7043;
+      outline-offset: 2px;
+    }
   </style>
 </head>
 <body>
@@ -36,6 +121,66 @@
     <li><a href="#">Chapter 6: Manufacturing Industries</a></li>
     <li><a href="#">Chapter 7: Lifelines of National Economy</a></li>
   </ul>
+
+  <section class="map-section">
+    <h2>🐅 Tiger Reserves of India (Interactive Map)</h2>
+    <p>
+      Hover over the red dots on the India map to learn <strong>three important key points</strong>
+      about each tiger reserve.
+    </p>
+
+    <div class="map-wrapper">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/India_location_map.svg/640px-India_location_map.svg.png"
+        alt="Map of India with tiger reserve locations"
+      >
+
+      <button class="reserve-dot" style="top: 27%; left: 34%;" aria-label="Corbett Tiger Reserve">
+        <span class="tooltip">
+          <strong>Corbett Tiger Reserve</strong>
+          1. Location: Uttarakhand<br>
+          2. Established: 1936 (India's first national park)<br>
+          3. Highlights: Dense sal forests and Bengal tigers
+        </span>
+      </button>
+
+      <button class="reserve-dot" style="top: 35%; left: 44%;" aria-label="Kanha Tiger Reserve">
+        <span class="tooltip">
+          <strong>Kanha Tiger Reserve</strong>
+          1. Location: Madhya Pradesh<br>
+          2. Famous for: Barasingha conservation success<br>
+          3. Habitat: Meadows, forests, and rich wildlife
+        </span>
+      </button>
+
+      <button class="reserve-dot" style="top: 53%; left: 41%;" aria-label="Tadoba Tiger Reserve">
+        <span class="tooltip">
+          <strong>Tadoba Tiger Reserve</strong>
+          1. Location: Maharashtra<br>
+          2. Known for: High tiger sighting chances<br>
+          3. Features: Dry deciduous forests and lakes
+        </span>
+      </button>
+
+      <button class="reserve-dot" style="top: 63%; left: 35%;" aria-label="Bandipur Tiger Reserve">
+        <span class="tooltip">
+          <strong>Bandipur Tiger Reserve</strong>
+          1. Location: Karnataka<br>
+          2. Part of: Nilgiri Biosphere Reserve<br>
+          3. Wildlife: Tigers, elephants, gaur, deer
+        </span>
+      </button>
+
+      <button class="reserve-dot" style="top: 78%; left: 50%;" aria-label="Periyar Tiger Reserve">
+        <span class="tooltip">
+          <strong>Periyar Tiger Reserve</strong>
+          1. Location: Kerala<br>
+          2. Landscape: Evergreen forests and lake ecosystem<br>
+          3. Speciality: Tiger and elephant conservation area
+        </span>
+      </button>
+    </div>
+  </section>
 
   <h2>🏛 Civics</h2>
   <ul>
